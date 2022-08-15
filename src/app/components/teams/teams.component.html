@@ -1,0 +1,29 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">Teams</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container site-section">
+        <div class="row">
+        </div>
+        <div class="row">
+          <div class="col-lg-6" *ngFor="let team of teams">
+            <div class="custom-media d-flex" style = "margin-top: 100px;">
+              <div class="img mr-4">
+                <img src="assets/images/img_1.jpg" alt="Image" class="img-fluid">
+              </div>
+              <div class="text">
+                <span class="meta">{{team.foundation | reverse}}</span>
+                <h3 class="mb-4"><a href="#">{{team.stadium}}</a></h3>
+                <p>{{team.name}}</p>
+                <p><a href="#">Read more</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>

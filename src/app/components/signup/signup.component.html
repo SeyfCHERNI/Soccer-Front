@@ -1,0 +1,80 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">Sign Up</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form [formGroup]="signupform" >
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="firstname" placeholder="first name ">
+                    </div>
+                    <div *ngIf='signupform.controls["firstname"].invalid &&
+                     (signupform.controls["firstname"].touched || signupform.controls["firstname"].dirty)'>
+                         <div *ngIf='signupform.controls["firstname"].errors.required' style="color: red;">
+                            First name is required
+                         </div>
+                         <div *ngIf='signupform.controls["firstname"].errors.minlength' style="color: red;">
+                            First name must have at least 3 chars
+                         </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="lastname" placeholder="last name">
+                    </div>
+                    <div *ngIf='signupform.controls["lastname"].invalid &&
+                        (signupform.controls["lastname"].touched || signupform.controls["lastname"].dirty)'>
+                        <div *ngIf='signupform.controls["lastname"].errors.required' style="color: red;">
+                           last name is required
+                        </div>
+                        <div *ngIf='signupform.controls["lastname"].errors.minlength' style="color: red;">
+                           last name must have at least 5 chars
+                        </div>
+                   </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" formControlName="email" placeholder="email ">
+                    </div>
+                    <div *ngIf='signupform.controls["email"].invalid &&
+                         (signupform.controls["email"].touched || signupform.controls["email"].dirty)'>
+                        <div *ngIf='signupform.controls["email"].errors.required' style="color: red;">
+                           email is required
+                        </div>
+                        <div *ngIf='signupform.controls["email"].errors.email' style="color: red;">
+                           email must be on xyz@g.com format 
+                        </div>
+                   </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="password" placeholder="password ">
+                    </div>
+                 <div *ngIf='signupform.controls["password"].invalid &&
+                        (signupform.controls["password"].touched || signupform.controls["password"].dirty)'>
+                   <div *ngIf='signupform.controls["password"].errors.required' style="color: red;">
+                      password is required
+                   </div>
+                   <div *ngIf='signupform.controls["password"].errors.minlength' style="color: red;">
+                      password must have at least 6 chars
+                   </div>
+                   <div *ngIf='signupform.controls["password"].errors.maxlength' style="color: red;">
+                     password must be below 12 chars
+                   </div>
+                 </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="confirmpassword" placeholder="confirm password ">
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary py-3 px-5" (click)="signUp()" value="Sign up">Signup </button>
+                    </div>
+                </form>
+            </div>
+  
+        </div>
+    </div>
+</div>
